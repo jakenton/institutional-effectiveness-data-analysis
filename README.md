@@ -40,3 +40,14 @@ Given the high-stakes nature of accreditation reporting, the project emphasizes 
 - **Strategic Value:** This layer operationalizes trust. Administrators can confidently use the report for high-stakes decisions, knowing the underlying data and calculation have been rigorously audited and documented.
 
 This project showcases expertise in database architecture, advanced analytical modeling, and regulatory-compliant data governance.
+
+---
+---
+
+# Update to SQL
+
+Refactored the data ingestion and preprocessing workflow to include two new high-value features for the retention model:
+
+1. **SQL (Extraction / Transformation):** Modified the CTE query to add two new columns at the database level: `term_gpa_risk_category` (conditional logic) and `avg_gpa_by_ethnicity` (window function).
+
+2. **Python (Prepocessing):** Updated the pandas pipeline (`clean_and_prepare_data`) to handle missing values and perform one-hot encoding on the newly extracted categorical feature (`term_gpa_risk_category`).
